@@ -12,5 +12,11 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
 
+          apt-get update -y
+          apt-get install -y libcurl4-openssl-dev
+          
           Rscript penguin_analysis.R
-          echo "WE DID IT!"
+          
+          cml-publish my_penguing_plot.png --md > report.md
+          cat model.html >> report.md 
+          cml-send-comment report.md
