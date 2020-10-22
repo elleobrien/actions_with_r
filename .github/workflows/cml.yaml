@@ -1,0 +1,16 @@
+name: penguin-noses
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    container: docker://dvcorg/cml-py3:latest
+    steps:
+      - uses: r-lib/actions/setup-r@master
+      - uses: actions/checkout@v2
+      - name: cml_run
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+
+          Rscript penguin_analysis.R
+          echo "WE DID IT!"
