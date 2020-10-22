@@ -12,8 +12,8 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
 
-          apt-get update -y
-          apt-get install -y libcurl4-openssl-dev
+          apt-get update -y 
+          apt-get install -y libssl-dev libcurl4-openssl-dev
           
           Rscript penguin_analysis.R
           
