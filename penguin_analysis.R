@@ -1,4 +1,13 @@
-install.packages(c("palmerpenguins","ggplot2","kableExtra","broom"),repos = "http://cran.us.r-project.org")
+
+install.packages("palmerpenguins",repos = "http://cran.us.r-project.org")
+print("Penguins are here")
+install.packages("kableExtra",repos = "http://cran.us.r-project.org")
+print("Kables are here")
+install.packages("broom",repos = "http://cran.us.r-project.org")
+print("broom is here")
+install.packages("ggplot2",repos = "http://cran.us.r-project.org")
+print("ggplots are here")
+
 
 library(palmerpenguins)
 library(ggplot2)
