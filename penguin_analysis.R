@@ -1,3 +1,5 @@
+install.packages(c("palmerpenguins","ggplot2","kableExtra","broom"),repos = "http://cran.us.r-project.org")
+
 library(palmerpenguins)
 library(ggplot2)
 library(kableExtra)
