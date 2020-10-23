@@ -3,7 +3,6 @@ on: [push]
 jobs:
   run:
     runs-on: [ubuntu-latest]
-    container: docker://dvcorg/cml-py3:latest
     steps:
       - uses: r-lib/actions/setup-r@master
       - uses: actions/checkout@v2
