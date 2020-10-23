@@ -17,6 +17,6 @@ jobs:
           
           Rscript penguin_analysis.R
           
-          cml-publish my_penguing_plot.png --md > report.md
-          cat model.html >> report.md 
+          cml-publish my_penguin_plot.png --md > report.md
+          #cat model.html >> report.md 
           cml-send-comment report.md
