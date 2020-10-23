@@ -1,16 +1,16 @@
 
 install.packages("palmerpenguins",repos = "http://cran.us.r-project.org")
-print("Penguins are here")
 install.packages("ggplot2",repos = "http://cran.us.r-project.org")
-print("ggplots are here")
 install.packages("kableExtra",repos = "http://cran.us.r-project.org",dependencies=TRUE)
-install.packages("broom")
+install.packages("broom",repos = "http://cran.us.r-project.org")
+install.packages("dplyr",repos = "http://cran.us.r-project.org")
 
 
 library(broom)
 library(kableExtra)
 library(palmerpenguins)
 library(ggplot2)
+library(dplyr)
 
 
 
@@ -31,11 +31,12 @@ px <- ggplot(data=penguins, aes(bill_length_mm))+
   ggtitle("Penguins noses")+
   scale_fill_manual("Species",values=palette)
 px  
-ggsave("my_penguin_plot.png",px, device = "png", width=4,height=4)
+ggsave("my_penguin_plot.png",px, device = "png", width=2,height=2)
 
 # Run a linear model
-model <- lm(bill_length_mm ~ 1 + species, data = penguins) %>%
-  tidy() %>%
+t <- penguins %>%
+  select(c("species","bill_length_mm","bill_depth_mm","flipper_length_mm","body_mass_g")) %>%
+  aggregate(.~species,.,FUN=mean,na.rm=TRUE) %>%
   kable() %>%
   cat(.,file="mymodel.html")
 
