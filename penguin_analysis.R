@@ -32,3 +32,10 @@ px <- ggplot(data=penguins, aes(bill_length_mm))+
   scale_fill_manual("Species",values=palette)
 px  
 ggsave("my_penguin_plot.png",px, device = "png", width=4,height=4)
+
+# Run a linear model
+model <- lm(bill_length_mm ~ 1 + species, data = penguins) %>%
+  tidy() %>%
+  kable() %>%
+  cat(.,file="mymodel.html")
+
