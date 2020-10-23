@@ -3,8 +3,12 @@ install.packages("palmerpenguins",repos = "http://cran.us.r-project.org")
 print("Penguins are here")
 install.packages("ggplot2",repos = "http://cran.us.r-project.org")
 print("ggplots are here")
+install.packages("kableExtra",repos = "http://cran.us.r-project.org",dependencies=TRUE)
+install.packages("broom")
 
 
+library(broom)
+library(kableExtra)
 library(palmerpenguins)
 library(ggplot2)
 
