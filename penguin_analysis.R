@@ -1,18 +1,13 @@
 
 install.packages("palmerpenguins",repos = "http://cran.us.r-project.org")
 print("Penguins are here")
-install.packages("kableExtra",repos = "http://cran.us.r-project.org", dependencies=TRUE)
-print("Kables are here")
-install.packages("broom",repos = "http://cran.us.r-project.org")
-print("broom is here")
 install.packages("ggplot2",repos = "http://cran.us.r-project.org")
 print("ggplots are here")
 
 
 library(palmerpenguins)
 library(ggplot2)
-library(kableExtra)
-library(broom)
+
 
 
 data(package = 'palmerpenguins')
@@ -33,9 +28,3 @@ px <- ggplot(data=penguins, aes(bill_length_mm))+
   scale_fill_manual("Species",values=palette)
 px  
 ggsave("my_penguin_plot.png",px, device = "png", width=4,height=4)
-
-# Run a linear model
-model <- lm(bill_length_mm ~ 1 + species, data = penguins) %>%
-  tidy() %>%
-  kable() %>%
-  cat(.,file="mymodel.html")
