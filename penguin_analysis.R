@@ -1,7 +1,7 @@
 
 install.packages("palmerpenguins",repos = "http://cran.us.r-project.org")
 print("Penguins are here")
-install.packages("kableExtra",repos = "http://cran.us.r-project.org")
+install.packages("kableExtra",repos = "http://cran.us.r-project.org", dependencies=TRUE)
 print("Kables are here")
 install.packages("broom",repos = "http://cran.us.r-project.org")
 print("broom is here")
