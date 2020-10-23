@@ -7,16 +7,17 @@ jobs:
     steps:
       - uses: r-lib/actions/setup-r@master
       - uses: actions/checkout@v2
-      - name: cml_run
-        env:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-        run: |
 
-          apt-get update -y 
-          apt-get install -y libssl-dev libcurl4-openssl-dev libxml2-dev
-          
-          Rscript penguin_analysis.R
-          
-          cml-publish my_penguin_plot.png --md > report.md
-          cat mymodel.html >> report.md 
-          cml-send-comment report.md
+      - name: Query dependencies
+        run: |
+          install.packages('remotes')
+          saveRDS(remotes::dev_package_deps(dependencies = TRUE), "depends.Rds", version = 2)
+        shell: Rscript {0}
+
+      - name: Cache R packages
+        if: runner.os != 'Windows'
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{ hashFiles('depends.Rds') }}
+          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-
