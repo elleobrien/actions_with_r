@@ -1,9 +1,10 @@
 
-install.packages("palmerpenguins",repos = "http://cran.us.r-project.org")
-install.packages("ggplot2",repos = "http://cran.us.r-project.org")
-install.packages("kableExtra",repos = "http://cran.us.r-project.org",dependencies=TRUE)
-install.packages("broom",repos = "http://cran.us.r-project.org")
-install.packages("dplyr",repos = "http://cran.us.r-project.org")
+options(repos = c(REPO_NAME = "https://packagemanager.rstudio.com/all/__linux__/centos7/352"))
+install.packages("palmerpenguins")
+install.packages("ggplot2")
+install.packages("kableExtra")
+install.packages("broom")
+install.packages("dplyr")
 
 
 library(broom)
@@ -20,7 +21,7 @@ data(package = 'palmerpenguins')
 # Look at distribution of bill lengths in 3 species
 palette = c("#999999", "#E69F00", "#56B4E9")
 theme_set(
-  theme_classic(base_size = 25)
+  theme_classic(base_size = 14)
 )
 
 px <- ggplot(data=penguins, aes(bill_length_mm))+
