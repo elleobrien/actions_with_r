@@ -1,3 +1,3 @@
-library(MASS)
-head(Boston)
+library(palmerpenguins)
+head(penguins)
 
