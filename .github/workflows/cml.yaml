@@ -11,6 +11,7 @@ jobs:
         
       - name: Do the job!
         run: |
+          R -e 'install.packages("renv")'
           Rscript penguin_analysis.R
           cml-publish my_penguin_plot.png --md > report.md
           cml-send-comment report.md
