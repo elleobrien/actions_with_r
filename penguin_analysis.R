@@ -1,27 +1,13 @@
-
-options(repos = c(REPO_NAME = "https://packagemanager.rstudio.com/all/__linux__/centos7/352"))
-install.packages("palmerpenguins")
-install.packages("ggplot2")
-install.packages("kableExtra")
-install.packages("broom")
-install.packages("dplyr")
-
-
-library(broom)
-library(kableExtra)
 library(palmerpenguins)
 library(ggplot2)
 library(dplyr)
 
-
-
 data(package = 'palmerpenguins')
-
 
 # Look at distribution of bill lengths in 3 species
 palette = c("#999999", "#E69F00", "#56B4E9")
 theme_set(
-  theme_classic(base_size = 14)
+  theme_classic(base_size = 10)
 )
 
 px <- ggplot(data=penguins, aes(bill_length_mm))+
@@ -29,15 +15,15 @@ px <- ggplot(data=penguins, aes(bill_length_mm))+
   theme_classic()+
   xlab("Bill Length (mm)")+
   ylab("Count")+
-  ggtitle("Penguins noses")+
+  ggtitle("Penguin noses")+
   scale_fill_manual("Species",values=palette)
 px  
-ggsave("my_penguin_plot.png",px, device = "png", width=2,height=2)
+ggsave("my_penguin_plot.png",px, device = "png", width=5,height=5)
 
 # Run a linear model
-t <- penguins %>%
-  select(c("species","bill_length_mm","bill_depth_mm","flipper_length_mm","body_mass_g")) %>%
-  aggregate(.~species,.,FUN=mean,na.rm=TRUE) %>%
-  kable() %>%
-  cat(.,file="mymodel.html")
+# t <- penguins %>%
+#  select(c("species","bill_length_mm","bill_depth_mm","flipper_length_mm","body_mass_g")) %>%
+#  aggregate(.~species,.,FUN=mean,na.rm=TRUE) %>%
+#  kable() %>%
+#  cat(.,file="mymodel.html")
 
