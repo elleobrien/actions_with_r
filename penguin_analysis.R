@@ -1,5 +1,3 @@
-renv::restore()
-
 library(palmerpenguins)
 library(ggplot2)
 library(dplyr)
@@ -16,7 +14,8 @@ theme_set(
 px <- ggplot(data=penguins, aes(bill_length_mm))+
   geom_histogram(aes(fill=species), alpha=0.6, position="identity")+
   theme_classic()+
-  theme(text = element_text(size = 5))+
+  theme(text = element_text(size = 5),
+        legend.key.size = unit(.3,"cm"))+
   xlab("Bill Length (mm)")+
   ylab("Count")+
   ggtitle("Penguin noses")+
