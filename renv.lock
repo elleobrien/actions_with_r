@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "3.6.2",
+    "Version": "4.0.3",
     "Repositories": [
       {
         "Name": "REPO_NAME",
@@ -11,10 +11,10 @@
   "Packages": {
     "MASS": {
       "Package": "MASS",
-      "Version": "7.3-51.4",
+      "Version": "7.3-53",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "a94714e63996bc284b8795ec50defc07"
+      "Hash": "d1bc1c8e9c0ace57ec9ffea01021d45f"
     },
     "Matrix": {
       "Package": "Matrix",
@@ -46,10 +46,10 @@
     },
     "backports": {
       "Package": "backports",
-      "Version": "1.1.8",
+      "Version": "1.1.10",
       "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "3ef0eac19317fd03c0c854aed581d473"
+      "Repository": "RSPM",
+      "Hash": "05ffd2d4acb51aee70f1de68ad7a6aed"
     },
     "callr": {
       "Package": "callr",
@@ -132,7 +132,7 @@
       "Package": "generics",
       "Version": "0.0.2",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "b8cff1d1391fd1ad8b65877f4c7f2e53"
     },
     "ggplot2": {
@@ -144,10 +144,10 @@
     },
     "glue": {
       "Package": "glue",
-      "Version": "1.4.1",
+      "Version": "1.4.2",
       "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "f43e0d5e85ccb0a4045670c0607ee504"
+      "Repository": "RSPM",
+      "Hash": "6efd734b14c6471cfe443345f3e35e29"
     },
     "gtable": {
       "Package": "gtable",
@@ -172,16 +172,16 @@
     },
     "lattice": {
       "Package": "lattice",
-      "Version": "0.20-38",
+      "Version": "0.20-41",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "848f8c593fd1050371042d18d152e3d7"
+      "Hash": "fbd9285028b0263d76d18c95ae51a53d"
     },
     "lifecycle": {
       "Package": "lifecycle",
       "Version": "0.2.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "361811f31f71f8a617a9a68bf63f1f42"
     },
     "magrittr": {
@@ -193,10 +193,10 @@
     },
     "mgcv": {
       "Package": "mgcv",
-      "Version": "1.8-31",
+      "Version": "1.8-33",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "4bb7e0c4f3557583e1e8d3c9ffb8ba5c"
+      "Hash": "eb7b6439bc6d812eed2cddba5edc6be3"
     },
     "munsell": {
       "Package": "munsell",
@@ -207,16 +207,16 @@
     },
     "nlme": {
       "Package": "nlme",
-      "Version": "3.1-142",
+      "Version": "3.1-149",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "557d78d7eac2c1090ee58647a6274142"
+      "Hash": "7c24ab3a1e3afe50388eb2d893aab255"
     },
     "palmerpenguins": {
       "Package": "palmerpenguins",
       "Version": "0.1.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "9a455031890b2adf20e19784a114ddd4"
     },
     "pillar": {
@@ -258,7 +258,7 @@
       "Package": "prettyunits",
       "Version": "1.1.1",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "95ef9167b75dde9d2ccc3c7528393e7e"
     },
     "processx": {
@@ -291,10 +291,10 @@
     },
     "rlang": {
       "Package": "rlang",
-      "Version": "0.4.7",
+      "Version": "0.4.8",
       "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "c06d2a6887f4b414f8e927afd9ee976a"
+      "Repository": "RSPM",
+      "Hash": "843a6af51414bce7f8a8e372f11d6cd0"
     },
     "rprojroot": {
       "Package": "rprojroot",
@@ -326,16 +326,16 @@
     },
     "tibble": {
       "Package": "tibble",
-      "Version": "3.0.3",
+      "Version": "3.0.4",
       "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "08bd36bd34b20d4f7971d49e81deaab0"
+      "Repository": "RSPM",
+      "Hash": "71dffd8544691c520dd8e41ed2d7e070"
     },
     "tidyselect": {
       "Package": "tidyselect",
       "Version": "1.1.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Hash": "6ea435c354e8448819627cf686f66e0a"
     },
     "utf8": {
@@ -347,10 +347,10 @@
     },
     "vctrs": {
       "Package": "vctrs",
-      "Version": "0.3.1",
+      "Version": "0.3.4",
       "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "1739235995f08583db4095a28c357207"
+      "Repository": "RSPM",
+      "Hash": "0bc90078aeee42f2520b1d0a33bd6758"
     },
     "viridisLite": {
       "Package": "viridisLite",
