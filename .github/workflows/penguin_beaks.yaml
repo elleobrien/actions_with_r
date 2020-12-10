@@ -1,0 +1,26 @@
+name: penguin-beaks
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    container: docker://dvcorg/cml:latest
+    steps:
+      - name: Setup R
+        uses: r-lib/actions/setup-r@master
+        
+      - uses: actions/checkout@v2
+      
+      - name: Setup dependencies
+        run: |
+          R -e 'install.packages("renv")'
+          R -e 'renv::restore()'
+          
+      - name: Analyze some penguin beaks and report
+        env: 
+          repo_token: ${{  secrets.GITHUB_TOKEN }} 
+        run: |
+          R -e 'renv::run("penguin_analysis.R")'
+          
+          cml-publish my_penguin_plot.png --md > report.md
+          cat mymodel.html >> report.md 
+          cml-send-comment report.md
