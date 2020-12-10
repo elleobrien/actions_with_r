@@ -3,6 +3,7 @@ renv::restore()
 library(palmerpenguins)
 library(ggplot2)
 library(dplyr)
+library(kableExtra)
 
 data(package = 'palmerpenguins')
 
@@ -24,9 +25,9 @@ px
 ggsave("my_penguin_plot.png",px, device = "png", width=3,height=1.5,dpi=300)
 
 # Run a linear model
-# t <- penguins %>%
-#  select(c("species","bill_length_mm","bill_depth_mm","flipper_length_mm","body_mass_g")) %>%
-#  aggregate(.~species,.,FUN=mean,na.rm=TRUE) %>%
-#  kable() %>%
-#  cat(.,file="mymodel.html")
+t <- penguins %>%
+  select(c("species","bill_length_mm","bill_depth_mm","flipper_length_mm","body_mass_g")) %>%
+  aggregate(.~species,.,FUN=mean,na.rm=TRUE) %>%
+  kable() %>%
+  cat(.,file="mymodel.html")
 
