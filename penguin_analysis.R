@@ -15,13 +15,13 @@ theme_set(
 px <- ggplot(data=penguins, aes(bill_length_mm))+
   geom_histogram(aes(fill=species), alpha=0.6, position="identity")+
   theme_classic()+
-  theme(text = element_text(size = 4))+
+  theme(text = element_text(size = 5))+
   xlab("Bill Length (mm)")+
   ylab("Count")+
   ggtitle("Penguin noses")+
   scale_fill_manual("Species",values=palette)
 px  
-ggsave("my_penguin_plot.png",px, device = "png", width=1.5,height=1)
+ggsave("my_penguin_plot.png",px, device = "png", width=3,height=1.5,dpi=300)
 
 # Run a linear model
 # t <- penguins %>%
