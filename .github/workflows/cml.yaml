@@ -10,15 +10,17 @@ jobs:
         
       - uses: actions/checkout@v2
         
-      - name: Do the job!
+      - name: Setup dependencies 
+        run: | 
+          R -e 'install.packages("renv")'
+          R -e 'renv::restore()'
+          
+      - name: Analyze some penguin beaks
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          R -e 'install.packages("renv")'
-          R -e 'renv::restore()'
           R -e 'renv::run("penguin_analysis.R")'
 
-          
           cml-publish my_penguin_plot.png --md > report.md
           cat mymodel.html >> report.md
           cml-send-comment report.md
