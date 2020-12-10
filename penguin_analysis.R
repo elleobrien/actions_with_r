@@ -10,7 +10,7 @@ penguins <- rbind(penguins, new)
 
 
 # Look at distribution of bill lengths in 3 species
-palette = c("#999999", "#E69F00", "#56B4E9")
+palette = c("#999999", "#E69F00", "#56B4E9", "#00FF00")
 theme_set(
   theme_classic(base_size = 7)
 )
