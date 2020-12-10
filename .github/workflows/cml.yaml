@@ -15,6 +15,8 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           R -e 'install.packages("renv")'
+          R -e 'renv::init()'
           Rscript penguin_analysis.R
+          
           cml-publish my_penguin_plot.png --md > report.md
           cml-send-comment report.md
