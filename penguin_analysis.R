@@ -5,6 +5,10 @@ library(kableExtra)
 
 data(package = 'palmerpenguins')
 
+id <- "1Ut38XjBahKE7ess-Dgm0202PaHZNbcD7" 
+new <- read.csv(sprintf("https://docs.google.com/uc?id=%s&export=download", id))
+penguins <- rbind(penguins, new)
+
 # Look at distribution of bill lengths in each species
 palette = c("#999999", "#E69F00", "#56B4E9", "#643A71")
 theme_set(

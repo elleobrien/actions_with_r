@@ -1,0 +1,28 @@
+name: penguins-have-long-noses
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    container: docker://dvcorg/cml:latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup R
+        uses: r-lib/actions/setup-r@master
+        
+      - name: Setup dependencies
+        run: |
+          R -e 'install.packages("renv")' 
+          R -e 'renv::restore()'
+          
+      - name: Analyze some penguin beaks
+        env: 
+          repo_token: ${{ secrets.GITHUB_TOKEN }} 
+        run: |
+          R -e 'renv::run("penguin_analysis.R")'
+          # Add picture
+          cml-publish my_penguin_plot.png --md > report.md 
+          # Add table
+          cat mymodel.html >> report.md
+          # Send report
+          cml-send-comment report.md
