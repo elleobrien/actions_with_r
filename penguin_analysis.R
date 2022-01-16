@@ -3,6 +3,7 @@ library(ggplot2)
 library(dplyr)
 library(kableExtra)
 
+
 data(package = 'palmerpenguins')
 
 id <- "1Ut38XjBahKE7ess-Dgm0202PaHZNbcD7" 
@@ -33,4 +34,4 @@ t <- penguins %>%
   aggregate(.~species,.,FUN=mean,na.rm=TRUE) %>%
   kable() %>%
   cat(.,file="mymodel.html")
-
+  
